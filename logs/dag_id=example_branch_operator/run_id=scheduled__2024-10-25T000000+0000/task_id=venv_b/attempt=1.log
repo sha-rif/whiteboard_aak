@@ -1,0 +1,34 @@
+[2024-10-26T20:35:26.871+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-26T20:35:26.893+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: example_branch_operator.venv_b scheduled__2024-10-25T00:00:00+00:00 [queued]>
+[2024-10-26T20:35:26.904+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: example_branch_operator.venv_b scheduled__2024-10-25T00:00:00+00:00 [queued]>
+[2024-10-26T20:35:26.906+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-10-26T20:35:26.921+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonVirtualenvOperator): venv_b> on 2024-10-25 00:00:00+00:00
+[2024-10-26T20:35:26.928+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=237) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-26T20:35:26.930+0000] {standard_task_runner.py:72} INFO - Started process 239 to run task
+[2024-10-26T20:35:26.930+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'example_branch_operator', 'venv_b', 'scheduled__2024-10-25T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', '/home/***/.local/lib/python3.12/site-packages/***/example_dags/example_branch_operator.py', '--cfg-path', '/tmp/tmp87p54ala']
+[2024-10-26T20:35:26.932+0000] {standard_task_runner.py:105} INFO - Job 9: Subtask venv_b
+[2024-10-26T20:35:26.982+0000] {task_command.py:467} INFO - Running <TaskInstance: example_branch_operator.venv_b scheduled__2024-10-25T00:00:00+00:00 [running]> on host c94222e110db
+[2024-10-26T20:35:27.080+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='example_branch_operator' AIRFLOW_CTX_TASK_ID='venv_b' AIRFLOW_CTX_EXECUTION_DATE='2024-10-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-25T00:00:00+00:00'
+[2024-10-26T20:35:27.081+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-26T20:35:27.082+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-26T20:35:27.083+0000] {logging_mixin.py:190} INFO - Current task name:venv_b state:running start_date:2024-10-26 20:35:26.894478+00:00
+[2024-10-26T20:35:27.083+0000] {logging_mixin.py:190} INFO - Dag name:example_branch_operator and current dag run status:running
+[2024-10-26T20:35:27.084+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-26T20:35:27.085+0000] {baseoperator.py:405} WARNING - PythonVirtualenvOperator.execute cannot be called outside TaskInstance!
+[2024-10-26T20:35:27.095+0000] {python.py:809} INFO - Python virtual environment will be cached in /tmp/venv-5ea997a7
+[2024-10-26T20:35:27.098+0000] {python.py:823} INFO - Re-using cached Python virtual environment in /tmp/venv-5ea997a7
+[2024-10-26T20:35:27.106+0000] {process_utils.py:186} INFO - Executing cmd: /tmp/venv-5ea997a7/bin/python /tmp/venv-callv_vb93jn/script.py /tmp/venv-callv_vb93jn/script.in /tmp/venv-callv_vb93jn/script.out /tmp/venv-callv_vb93jn/string_args.txt /tmp/venv-callv_vb93jn/termination.log
+[2024-10-26T20:35:27.107+0000] {process_utils.py:190} INFO - Output:
+[2024-10-26T20:35:29.772+0000] {process_utils.py:194} INFO - Hello World with some numpy stuff: [0 1 2 3 4 5]
+[2024-10-26T20:35:30.188+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-10-26T20:35:30.198+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-26T20:35:30.199+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=example_branch_operator, task_id=venv_b, run_id=scheduled__2024-10-25T00:00:00+00:00, execution_date=20241025T000000, start_date=20241026T203526, end_date=20241026T203530
+[2024-10-26T20:35:30.211+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-26T20:35:30.212+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-26T20:35:30.213+0000] {logging_mixin.py:190} INFO - Dag name:example_branch_operator queued_at:2024-10-26 20:34:59.272543+00:00
+[2024-10-26T20:35:30.214+0000] {logging_mixin.py:190} INFO - Task hostname:c94222e110db operator:PythonVirtualenvOperator
+[2024-10-26T20:35:30.229+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-26T20:35:30.244+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-26T20:35:30.248+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

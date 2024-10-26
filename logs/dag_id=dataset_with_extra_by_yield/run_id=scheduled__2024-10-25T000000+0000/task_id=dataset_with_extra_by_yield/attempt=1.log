@@ -1,0 +1,28 @@
+[2024-10-26T20:34:33.332+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-26T20:34:33.347+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dataset_with_extra_by_yield.dataset_with_extra_by_yield scheduled__2024-10-25T00:00:00+00:00 [queued]>
+[2024-10-26T20:34:33.355+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dataset_with_extra_by_yield.dataset_with_extra_by_yield scheduled__2024-10-25T00:00:00+00:00 [queued]>
+[2024-10-26T20:34:33.357+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-10-26T20:34:33.372+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): dataset_with_extra_by_yield> on 2024-10-25 00:00:00+00:00
+[2024-10-26T20:34:33.385+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=128) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-26T20:34:33.381+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'dataset_with_extra_by_yield', 'dataset_with_extra_by_yield', 'scheduled__2024-10-25T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', '/home/***/.local/lib/python3.12/site-packages/***/example_dags/example_outlet_event_extra.py', '--cfg-path', '/tmp/tmp14st42rw']
+[2024-10-26T20:34:33.387+0000] {standard_task_runner.py:105} INFO - Job 3: Subtask dataset_with_extra_by_yield
+[2024-10-26T20:34:33.387+0000] {standard_task_runner.py:72} INFO - Started process 130 to run task
+[2024-10-26T20:34:33.502+0000] {task_command.py:467} INFO - Running <TaskInstance: dataset_with_extra_by_yield.dataset_with_extra_by_yield scheduled__2024-10-25T00:00:00+00:00 [running]> on host c94222e110db
+[2024-10-26T20:34:33.611+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dataset_with_extra_by_yield' AIRFLOW_CTX_TASK_ID='dataset_with_extra_by_yield' AIRFLOW_CTX_EXECUTION_DATE='2024-10-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-25T00:00:00+00:00'
+[2024-10-26T20:34:33.618+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-10-26T20:34:33.619+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-10-26T20:34:33.620+0000] {logging_mixin.py:190} INFO - Current task name:dataset_with_extra_by_yield state:running start_date:2024-10-26 20:34:33.348923+00:00
+[2024-10-26T20:34:33.620+0000] {logging_mixin.py:190} INFO - Dag name:dataset_with_extra_by_yield and current dag run status:running
+[2024-10-26T20:34:33.621+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-26T20:34:33.625+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-10-26T20:34:33.655+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-26T20:34:33.656+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=dataset_with_extra_by_yield, task_id=dataset_with_extra_by_yield, run_id=scheduled__2024-10-25T00:00:00+00:00, execution_date=20241025T000000, start_date=20241026T203433, end_date=20241026T203433
+[2024-10-26T20:34:33.690+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-10-26T20:34:33.691+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-10-26T20:34:33.691+0000] {logging_mixin.py:190} INFO - Dag name:dataset_with_extra_by_yield queued_at:2024-10-26 20:34:29.288959+00:00
+[2024-10-26T20:34:33.691+0000] {logging_mixin.py:190} INFO - Task hostname:c94222e110db operator:_PythonDecoratedOperator
+[2024-10-26T20:34:33.728+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-26T20:34:33.743+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-26T20:34:33.746+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
