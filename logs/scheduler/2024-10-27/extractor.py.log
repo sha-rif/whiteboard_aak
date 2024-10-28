@@ -1,0 +1,43 @@
+[2024-10-27T03:48:09.188+0000] {processor.py:186} INFO - Started process (PID=14298) to work on /opt/airflow/dags/extractor.py
+[2024-10-27T03:48:09.204+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/extractor.py for tasks to queue
+[2024-10-27T03:48:09.261+0000] {logging_mixin.py:190} INFO - [2024-10-27T03:48:09.237+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/extractor.py
+[2024-10-27T03:48:09.756+0000] {processor.py:925} INFO - DAG(s) 'coinmarket_extraction' retrieved from /opt/airflow/dags/extractor.py
+[2024-10-27T03:48:09.822+0000] {logging_mixin.py:190} INFO - [2024-10-27T03:48:09.821+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-27T03:48:09.966+0000] {logging_mixin.py:190} INFO - [2024-10-27T03:48:09.966+0000] {dag.py:4180} INFO - Setting next_dagrun for coinmarket_extraction to 2024-10-26 23:50:00+00:00, run_after=2024-10-27 00:00:00+00:00
+[2024-10-27T03:48:10.055+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/extractor.py took 0.912 seconds
+[2024-10-27T03:48:40.215+0000] {processor.py:186} INFO - Started process (PID=14361) to work on /opt/airflow/dags/extractor.py
+[2024-10-27T03:48:40.216+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/extractor.py for tasks to queue
+[2024-10-27T03:48:40.218+0000] {logging_mixin.py:190} INFO - [2024-10-27T03:48:40.217+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/extractor.py
+[2024-10-27T03:48:40.231+0000] {processor.py:925} INFO - DAG(s) 'coinmarket_extraction' retrieved from /opt/airflow/dags/extractor.py
+[2024-10-27T03:48:40.247+0000] {logging_mixin.py:190} INFO - [2024-10-27T03:48:40.247+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-27T03:48:40.285+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/extractor.py took 0.076 seconds
+[2024-10-27T03:49:10.473+0000] {processor.py:186} INFO - Started process (PID=14424) to work on /opt/airflow/dags/extractor.py
+[2024-10-27T03:49:10.474+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/extractor.py for tasks to queue
+[2024-10-27T03:49:10.475+0000] {logging_mixin.py:190} INFO - [2024-10-27T03:49:10.475+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/extractor.py
+[2024-10-27T03:49:10.487+0000] {processor.py:925} INFO - DAG(s) 'coinmarket_extraction' retrieved from /opt/airflow/dags/extractor.py
+[2024-10-27T03:49:10.502+0000] {logging_mixin.py:190} INFO - [2024-10-27T03:49:10.502+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-27T03:49:10.539+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/extractor.py took 0.072 seconds
+[2024-10-27T06:07:31.842+0000] {processor.py:186} INFO - Started process (PID=14434) to work on /opt/airflow/dags/extractor.py
+[2024-10-27T06:07:31.844+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/extractor.py for tasks to queue
+[2024-10-27T06:07:31.850+0000] {logging_mixin.py:190} INFO - [2024-10-27T06:07:31.847+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/extractor.py
+[2024-10-27T06:07:31.908+0000] {processor.py:925} INFO - DAG(s) 'coinmarket_extraction' retrieved from /opt/airflow/dags/extractor.py
+[2024-10-27T06:07:31.964+0000] {logging_mixin.py:190} INFO - [2024-10-27T06:07:31.964+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-27T06:07:32.095+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/extractor.py took 0.260 seconds
+[2024-10-27T06:08:02.958+0000] {processor.py:186} INFO - Started process (PID=14497) to work on /opt/airflow/dags/extractor.py
+[2024-10-27T06:08:02.959+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/extractor.py for tasks to queue
+[2024-10-27T06:08:02.960+0000] {logging_mixin.py:190} INFO - [2024-10-27T06:08:02.960+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/extractor.py
+[2024-10-27T06:08:02.979+0000] {processor.py:925} INFO - DAG(s) 'coinmarket_extraction' retrieved from /opt/airflow/dags/extractor.py
+[2024-10-27T06:08:02.999+0000] {logging_mixin.py:190} INFO - [2024-10-27T06:08:02.999+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-27T06:08:03.048+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/extractor.py took 0.100 seconds
+[2024-10-27T06:08:33.199+0000] {processor.py:186} INFO - Started process (PID=14560) to work on /opt/airflow/dags/extractor.py
+[2024-10-27T06:08:33.200+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/extractor.py for tasks to queue
+[2024-10-27T06:08:33.202+0000] {logging_mixin.py:190} INFO - [2024-10-27T06:08:33.201+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/extractor.py
+[2024-10-27T06:08:33.218+0000] {processor.py:925} INFO - DAG(s) 'coinmarket_extraction' retrieved from /opt/airflow/dags/extractor.py
+[2024-10-27T06:08:33.234+0000] {logging_mixin.py:190} INFO - [2024-10-27T06:08:33.234+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-27T06:08:33.280+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/extractor.py took 0.087 seconds
+[2024-10-27T06:09:03.620+0000] {processor.py:186} INFO - Started process (PID=14623) to work on /opt/airflow/dags/extractor.py
+[2024-10-27T06:09:03.621+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/extractor.py for tasks to queue
+[2024-10-27T06:09:03.622+0000] {logging_mixin.py:190} INFO - [2024-10-27T06:09:03.622+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/extractor.py
+[2024-10-27T06:09:03.638+0000] {processor.py:925} INFO - DAG(s) 'coinmarket_extraction' retrieved from /opt/airflow/dags/extractor.py
+[2024-10-27T06:09:03.654+0000] {logging_mixin.py:190} INFO - [2024-10-27T06:09:03.653+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-27T06:09:03.692+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/extractor.py took 0.077 seconds

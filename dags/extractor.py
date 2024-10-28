@@ -1,28 +1,28 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time
 import requests
 import json
 import os
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.empty import EmptyOperator
-
+from airflow.sensors.time_delta import TimeDeltaSensor
 
 def fetch_coin_data():
-    # URL da API CoinGecko
+    # CoinGecko API URL
     url = "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,litecoin&vs_currencies=usd"
     response = requests.get(url)
 
     if response.status_code == 200:
         data = response.json()
 
-        # Especifica o caminho para salvar o arquivo JSON
-        output_dir = r"C:\Users\sharif.neto\Documents\Dados\whiteboard_aak\data"  # Altere para o diretório desejado
-        os.makedirs(output_dir, exist_ok=True)  # Cria o diretório se não existir
+        # Specify the path to save the JSON file
+        output_dir = r"C:\Users\sharif.neto\Documents\Dados\whiteboard_aak\data"  # Change to the desired directory
+        os.makedirs(output_dir, exist_ok=True)  # Create the directory if it does not exist
 
-        # Caminho do JSON original
+        # Path to the original JSON
         original_json_path = os.path.join(output_dir, "original.json")
 
-        # Criar o arquivo original.json se não existir
+        # Create the original.json file if it does not exist
         if not os.path.exists(original_json_path):
             original_data = {
                 "bitcoin": {"usd": 67107},
@@ -32,11 +32,11 @@ def fetch_coin_data():
             with open(original_json_path, "w") as f:
                 json.dump(original_data, f)
 
-        # Carregar dados do JSON original
+        # Load data from the original JSON
         with open(original_json_path, "r") as f:
             original_data = json.load(f)
 
-        # Comparar dados e criar um JSON com as diferenças
+        # Compare data and create a JSON with the differences
         differences = {}
         for coin, price_info in data.items():
             if coin in original_data:
@@ -47,37 +47,52 @@ def fetch_coin_data():
             else:
                 differences[coin] = {"original": None, "new": price_info["usd"]}
 
-        # Retornar o JSON com as diferenças
+        # Save the differences in a JSON file if there are any
+        differences_path = os.path.join(output_dir, "differences.json")
+        with open(differences_path, "w") as f:
+            json.dump(differences, f)
+
         return differences
     else:
-        return {"error": f"Falha na requisição: {response.status_code}"}
+        return {"error": f"Request failed: {response.status_code}"}
 
-
-# Definindo os parâmetros da DAG
+# Defining DAG parameters
 default_args = {
     "owner": "airflow",
     "depends_on_past": False,
-    "start_date": datetime(2024, 10, 26),  # Defina a data de início aqui
+    "start_date": datetime(2024, 10, 26),  # Set the start date here
     "email_on_failure": False,
     "email_on_retry": False,
     "retries": 1,
     "retry_delay": timedelta(minutes=5),
 }
 
-# Criando a DAG
+# Creating the DAG
 with DAG(
     "coinmarket_extraction",
     default_args=default_args,
-    description="Uma DAG para extrair dados de criptomoedas da CoinGecko a cada 10 minutos",
-    schedule_interval="*/10 * * * *",  # a cada 10 minutos
+    description="A DAG to extract cryptocurrency data from CoinGecko at 14:00 UTC -03:00",
+    schedule_interval="@daily",
 ) as dag:
 
-    # Tarefa para buscar dados da CoinGecko
+    # Start operator
     start = EmptyOperator(task_id="start")
+
+    # TimeDeltaSensor to wait 15 minutes
+    wait = TimeDeltaSensor(
+        delta=timedelta(minutes=15),
+        task_id="wait",
+        poke_interval=60  # Check every 60 seconds
+    )
+
+    # Task to fetch data from CoinGecko
     fetch_data = PythonOperator(
         task_id="fetch_coin_data",
         python_callable=fetch_coin_data,
     )
+
+    # End operator
     end = EmptyOperator(task_id="end")
 
-    (start >> fetch_data >> end)
+    # Defining task order
+    start >> wait >> fetch_data >> end
